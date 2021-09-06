@@ -1,6 +1,6 @@
 # VGDB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4 and it's purpose was to make a few-hour project for getting to know interceptors, loading services and giving a try to skeleton cards. Powered with rapid-api and the RAWG Video Games Database API.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4 and the purpose of it was to make a project in a few hours for getting to know some key Angular-related topics like interceptors or loading services and giving a try to skeleton cards. Powered with rapid-api and the RAWG Video Games Database API.
 
 ## Development server
 
