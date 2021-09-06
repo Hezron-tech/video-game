@@ -11,9 +11,10 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
+import { AnnComponent } from './ann/ann.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent, HomeComponent],
+  declarations: [AppComponent, SearchBarComponent, HomeComponent, AnnComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
