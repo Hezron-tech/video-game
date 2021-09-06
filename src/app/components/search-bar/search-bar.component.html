@@ -1,15 +1,15 @@
 <div class="search-container">
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="search-form">
+  <form (ngSubmit)="onSubmit()" class="search-form">
     <span routerLink='/' >The Videogame Database</span>
     <div class="personalized-input">
       <input
         class="search-input"
         type="text"
-        name="search"
-        ngModel
+        [(ngModel)]="query"
+        (ngModelChange)="onSubmit()"
         placeholder="Search 500,000+ games"
       />
-      <mat-icon (click)="onSubmit(form)" class="search-icon">search</mat-icon>
+      <mat-icon (click)="onSubmit()" class="search-icon">search</mat-icon>
     </div>
   </form>
 </div>

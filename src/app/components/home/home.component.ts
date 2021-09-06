@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { APIResponse, Game } from 'src/app/models';
 import { HttpService } from 'src/app/services/http.service';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-home',
@@ -13,17 +14,20 @@ export class HomeComponent implements OnInit, OnDestroy {
   public games: Game[] = [];
   private gameSub: Subscription = new Subscription();
   private routeSub: Subscription = new Subscription();
+  loading$ = this.loader.loading$;
 
   constructor(
     private httpService: HttpService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private loader: LoadingService,
   ) {}
 
   ngOnInit(): void {
+    this.loader.startLoading();
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-      if (params['game-search']) {
-        this.searchGames(params['game-search']);
+      if (params['query']) {
+        this.searchGames(params['query']);
       } else {
         this.searchGames();
       }
@@ -41,6 +45,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       .subscribe((gameList: APIResponse<Game>) => {
         this.games = gameList.results;
         console.log(gameList.results);
+        this.loader.stopLoading();
       });
   }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -8,11 +8,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-bar.component.scss'],
 })
 export class SearchBarComponent implements OnInit {
-  constructor(private router: Router) {}
+  query: string = '';
+
+  constructor(private router: Router, private loader: LoadingService) {}
 
   ngOnInit(): void {}
 
-  onSubmit(form: NgForm) {
-    this.router.navigate(['search', form.value.search]);
+  onSubmit() {
+    this.loader.startLoading();
+    this.router
+      .navigate(['query', this.query])
+      .then(() => this.loader.stopLoading());
   }
 }

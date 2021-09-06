@@ -10,12 +10,10 @@ import { APIResponse, Game } from '../models';
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  getGames(search?: string): Observable<APIResponse<Game>> {
+  getGames(query?: string): Observable<APIResponse<Game>> {
     let params;
-    if (search) {
-      params = new HttpParams().set('search', search);
-    }
+    if (query) params = new HttpParams().set('search', query);
 
-    return this.http.get<APIResponse<Game>>(env.BASE_URL + '/games', { params: params });
+    return this.http.get<APIResponse<Game>>(env.BASE_URL + '/games', { params });
   }
 }

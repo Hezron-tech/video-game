@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -12,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { CardComponent } from './components/card/card.component';
 import { DetailsComponent } from './components/details/details.component';
+import { SkeletonCardComponent } from './components/skeleton-card/skeleton-card.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { DetailsComponent } from './components/details/details.component';
     HomeComponent,
     CardComponent,
     DetailsComponent,
+    SkeletonCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { DetailsComponent } from './components/details/details.component';
     FormsModule,
     HttpClientModule,
     MatCardModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {

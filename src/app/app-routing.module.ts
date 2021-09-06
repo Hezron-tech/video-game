@@ -9,7 +9,7 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'search/:query',
+    path: 'query/:query',
     component: HomeComponent,
   },
   {
