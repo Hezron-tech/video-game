@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="games">
+    <mat-card class="game" *ngFor="let game of games">
+      <mat-card-header>
+        <mat-card-title>{{ game.name }}</mat-card-title>
+        <mat-card-subtitle>
+          <span *ngFor="let platform of game.parent_platforms">
+            {{ platform.platform.name }}
+          </span>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <img
+        mat-card-image
+        src="{{ game.background_image }}"
+        alt="Photo of {{ game.name }}"
+      />
+    </mat-card>
+  </div>
+</div>
