@@ -15,12 +15,10 @@ export class CardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.platforms.forEach((platform) => {
-      this.oneStringPlatforms += platform.platform.name + ', ';
-    });
-    this.oneStringPlatforms = this.oneStringPlatforms.slice(
-      0,
-      this.oneStringPlatforms.length - 2
+    let stringArray: string[] = [];
+    this.platforms.forEach((platform) =>
+      stringArray.push(platform.platform.name)
     );
+    this.oneStringPlatforms = stringArray.join(', ');
   }
 }
