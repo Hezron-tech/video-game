@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms';
@@ -11,10 +10,17 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
-import { AnnComponent } from './ann/ann.component';
+import { CardComponent } from './components/card/card.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent, HomeComponent, AnnComponent],
+  declarations: [
+    AppComponent,
+    SearchBarComponent,
+    HomeComponent,
+    CardComponent,
+    DetailsComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

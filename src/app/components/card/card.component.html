@@ -1,0 +1,8 @@
+<div class="card">
+  <img *ngIf="image;else noImage" src="{{ image }}" alt="{{ name }} image." />
+  <ng-template #noImage>No image :(</ng-template>
+  <div class="card-content">
+    <span>{{ name }}</span>
+    <span class="platforms">{{ oneStringPlatforms }}</span>
+  </div>
+</div>

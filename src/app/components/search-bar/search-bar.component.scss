@@ -1,14 +1,10 @@
 .search {
   &-container {
-    width: 100%;
+    width: 100vw;
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 4;
     background-image: url("/assets/cubes.png");
   }
 
