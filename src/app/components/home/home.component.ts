@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.loader.startLoading();
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
       if (params['query']) {
         this.searchGames(params['query']);
@@ -40,11 +39,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   searchGames(query?: string): void {
+    this.loader.startLoading();
     this.gameSub = this.httpService
       .getGames(query)
       .subscribe((gameList: APIResponse<Game>) => {
         this.games = gameList.results;
-        console.log(gameList.results);
         this.loader.stopLoading();
       });
   }
