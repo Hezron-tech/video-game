@@ -1,8 +1,10 @@
 .search {
   &-container {
     width: 100vw;
-    height: 100px;
+    height: 8em;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-image: url("/assets/cubes.png");
@@ -16,7 +18,7 @@
     justify-content: center;
     span {
       font-family: "Poppins";
-      font-size: 24px;
+      font-size: 18px;
       padding: 2em;
       &:hover {
         cursor: pointer;
@@ -58,4 +60,12 @@
   padding: 2px;
   width: 350px;
   background-color: white;
+}
+
+@media (max-width: 550px) {
+  .search-form {
+    span {
+      display: none;
+    }
+  }
 }
