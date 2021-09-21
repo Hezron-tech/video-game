@@ -14,6 +14,6 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    this.router.navigate(['query', this.query]);
+    this.router.navigate(['search'], { queryParams: { q: this.query }});
   }
 }
