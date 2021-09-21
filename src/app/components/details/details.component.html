@@ -1,1 +1,12 @@
-<p>details works!</p>
+<div class="container">
+  <div class="top">
+    <img
+      src="{{ gameInfo.background_image }}"
+      alt="{{ gameInfo.name }} image"
+    />
+    <span class="name">{{ gameInfo.name }}</span>
+    <div class="description" [innerHTML]="gameInfo.description"></div>
+  </div>
+
+  <app-loader *ngIf="loading$ | async"></app-loader>
+</div>
