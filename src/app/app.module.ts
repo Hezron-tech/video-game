@@ -14,6 +14,7 @@ import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor'
 import { CardComponent } from './components/card/card.component';
 import { DetailsComponent } from './components/details/details.component';
 import { SkeletonCardComponent } from './components/skeleton-card/skeleton-card.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SkeletonCardComponent } from './components/skeleton-card/skeleton-card.
     CardComponent,
     DetailsComponent,
     SkeletonCardComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
