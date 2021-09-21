@@ -16,4 +16,8 @@ export class HttpService {
 
     return this.http.get<APIResponse<Game>>(env.BASE_URL + '/games', { params });
   }
+
+  getGameInfo(id: number): Observable<Game> {
+    return this.http.get<Game>(env.BASE_URL + '/games/' + id);
+  }
 }
