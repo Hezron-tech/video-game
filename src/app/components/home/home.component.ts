@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { APIResponse, Game } from 'src/app/models';
 import { HttpService } from 'src/app/services/http.service';
@@ -20,16 +20,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     private httpService: HttpService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private loader: LoadingService,
+    private loader: LoadingService
   ) {}
 
   ngOnInit(): void {
-    this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-      if (params['query']) {
-        this.searchGames(params['query']);
-      } else {
-        this.searchGames();
-      }
+    this.routeSub = this.activatedRoute.queryParams.subscribe((params) => {
+      params.q ? this.searchGames(params.q) : this.searchGames();
     });
   }
 
@@ -49,6 +45,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   goToDetails(id: number) {
-    this.router.navigate(['details', id]);
+    this.router.navigate(['details'], { queryParams: { id } });
   }
 }
