@@ -9,11 +9,11 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'query/:query',
+    path: 'search',
     component: HomeComponent,
   },
   {
-    path: 'details/:id',
+    path: 'details',
     component: DetailsComponent,
   },
 ];
