@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoadingService } from 'src/app/services/loading.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -10,7 +9,7 @@ import { LoadingService } from 'src/app/services/loading.service';
 export class SearchBarComponent implements OnInit {
   query: string = '';
 
-  constructor(private router: Router, private loader: LoadingService) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
