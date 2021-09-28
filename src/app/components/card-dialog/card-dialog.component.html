@@ -1,0 +1,116 @@
+<div class="container" mat-dialog-title>
+  <div class="name">
+    <h2>{{ game.name }}</h2>
+    <div class="spans">
+      <span class="text-secondary" *ngFor="let genre of game.genres.slice(0,3)">{{
+        genre.name
+      }}</span>
+    </div>
+  </div>
+
+  <div class="platforms">
+    <img
+      *ngFor="let platform of game.parent_platforms"
+      src="../../../assets/{{ platform.platform.slug }}.png"
+      alt="{{ platform.platform.name }} icon"
+    />
+  </div>
+</div>
+<mat-dialog-content class="mat-typography">
+  <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <ol class="carousel-indicators">
+      <li
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="0"
+        class="active"
+      ></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          class="d-block w-100"
+          src="{{ game.short_screenshots[0].image }}"
+          alt="First slide"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="d-block w-100"
+          src="{{ game.short_screenshots[1].image }}"
+          alt="Second slide"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="d-block w-100"
+          src="{{ game.short_screenshots[2].image }}"
+          alt="Third slide"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="d-block w-100"
+          src="{{ game.short_screenshots[3].image }}"
+          alt="Fourth slide"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="d-block w-100"
+          src="{{ game.short_screenshots[4].image }}"
+          alt="Fifth slide"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="d-block w-100"
+          src="{{ game.short_screenshots[5].image }}"
+          alt="Sixth slide"
+        />
+      </div>
+      <div class="carousel-item">
+        <img
+          class="d-block w-100"
+          src="{{ game.short_screenshots[6].image }}"
+          alt="Seventh slide"
+        />
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="tags">
+    <span class="badge bg-secondary" *ngFor="let tag of this.game.tags">{{
+      tag.name
+    }}</span>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+  <button class="btn btn-danger" [mat-dialog-close]="true" cdkFocusInitial>
+    Close
+  </button>
+</mat-dialog-actions>

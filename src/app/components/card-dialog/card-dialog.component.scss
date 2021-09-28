@@ -1,0 +1,54 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .name {
+    display: flex;
+    flex-direction: column;
+
+    .spans {
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+
+      span {
+        font-size: medium;
+        position: relative;
+        bottom: 20px;
+      }
+    }
+  }
+}
+
+.carousel-item > img {
+  height: 300px;
+  width: 100%;
+}
+
+.carousel {
+  width: 500px;
+}
+
+.tags {
+  padding-top: 10px;
+  width: 500px;
+}
+
+.badge {
+  margin-right: 5px;
+  margin-bottom: 1px;
+}
+
+.platforms {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
+
+  img {
+    width: 34px;
+    height: 34px;
+  }
+}

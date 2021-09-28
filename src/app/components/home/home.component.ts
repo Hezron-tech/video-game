@@ -1,9 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { APIResponse, Game } from 'src/app/models';
 import { HttpService } from 'src/app/services/http.service';
 import { LoadingService } from 'src/app/services/loading.service';
+import { CardDialogComponent } from '../card-dialog/card-dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -19,8 +21,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private httpService: HttpService,
     private activatedRoute: ActivatedRoute,
-    private router: Router,
-    private loader: LoadingService
+    private loader: LoadingService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -44,7 +46,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       });
   }
 
-  goToDetails(id: number) {
-    this.router.navigate(['details'], { queryParams: { id } });
+  openDialog(game: Game) {
+    this.dialog.open(CardDialogComponent, { data: game });
   }
 }

@@ -15,6 +15,9 @@ import { CardComponent } from './components/card/card.component';
 import { DetailsComponent } from './components/details/details.component';
 import { SkeletonCardComponent } from './components/skeleton-card/skeleton-card.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { CardDialogComponent } from './components/card-dialog/card-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ import { LoaderComponent } from './components/loader/loader.component';
     DetailsComponent,
     SkeletonCardComponent,
     LoaderComponent,
+    CardDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,8 @@ import { LoaderComponent } from './components/loader/loader.component';
     HttpClientModule,
     MatCardModule,
     BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule,
   ],
   providers: [
     {
