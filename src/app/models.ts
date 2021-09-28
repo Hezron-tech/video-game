@@ -11,8 +11,9 @@ export interface Game {
   parent_platforms: Array<ParentPlatform>;
   publishers: Array<Publishers>;
   ratings: Array<Rating>;
-  screenshots: Array<Screenshots>;
+  short_screenshots: Array<Screenshots>;
   trailers: Array<Trailer>;
+  tags: Array<Tag>;
 }
 
 export interface APIResponse<T> {
@@ -26,7 +27,13 @@ interface Genre {
 export interface ParentPlatform {
   platform: {
     name: string;
+    slug: string;
   };
+}
+
+interface Tag {
+  id: number;
+  name: string;
 }
 
 interface Publishers {
