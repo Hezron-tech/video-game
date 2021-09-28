@@ -12,7 +12,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { CardComponent } from './components/card/card.component';
-import { DetailsComponent } from './components/details/details.component';
 import { SkeletonCardComponent } from './components/skeleton-card/skeleton-card.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { CardDialogComponent } from './components/card-dialog/card-dialog.component';
@@ -25,7 +24,6 @@ import { MatButtonModule } from '@angular/material/button';
     SearchBarComponent,
     HomeComponent,
     CardComponent,
-    DetailsComponent,
     SkeletonCardComponent,
     LoaderComponent,
     CardDialogComponent,
