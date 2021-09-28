@@ -1,8 +1,8 @@
-<div class="games" *ngIf="loading$ | async">
+<div class="games py-4 px-5" *ngIf="loading$ | async">
   <app-skeleton-card *ngFor="let i of [].constructor(10)"></app-skeleton-card>
 </div>
 
-<div class="games">
+<div class="games py-4 px-5">
   <app-card
     *ngFor="let game of games"
     [name]="game.name"
